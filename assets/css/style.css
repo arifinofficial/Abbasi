@@ -1,0 +1,54 @@
+html, body{
+    height: 100%;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+.adminFooter{
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    position: absolute;
+    bottom: 0;
+}
+
+.frameLogin{
+    background-color: #ececec;
+    height: auto;
+    position: relative;
+    top: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px; 
+}
+
+.imgLogin{
+    width: 100px;
+    height: 100px;
+}
+
+/* .loginForm{
+    position: relative;
+    top: 20%;
+} */
+
+.wrapperAdmin{
+    position: relative;
+    min-height: 100%;
+}
+
+.frameForm{
+    background-color: #ececec;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.content{
+    padding-bottom: 60px;
+}

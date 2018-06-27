@@ -17,6 +17,7 @@ $validation = $validation->check(array(
     'password' => array(
                     'required' => true,
                     'min'      => 5,
+                    'equal'    => 're-password',
                     )
 ));
 

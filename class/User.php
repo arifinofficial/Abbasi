@@ -17,4 +17,15 @@ class User
             return false;
         }
     }
+
+    public function loginAdmin($email, $password)
+    {
+        $data = $this->_DB->getInfoLogin('users', 'email', $email);
+
+        if (password_verify($password, $data['password'])) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

@@ -54,4 +54,19 @@ class Database
        
         $statement->execute();
     }
+
+    public function getInfoLogin($table, $column, $value)
+    {
+        $link = $this->conn;
+
+        $query      = "SELECT * FROM $table WHERE $column = ?";
+        $statement  = $link->prepare($query);
+        $statement->bindValue(1, $value, PDO::PARAM_STR);
+        $statement->execute();
+
+        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+            return $row;
+            // var_dump($row);
+        }
+    }
 }

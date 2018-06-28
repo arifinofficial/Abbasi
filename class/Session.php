@@ -11,4 +11,9 @@ class Session
     {
         return $_SESSION[$name];
     }
+
+    public static function exists($name)
+    {
+        return (isset($_SESSION[$name])) ? true : false;
+    }
 }

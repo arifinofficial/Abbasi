@@ -2,9 +2,14 @@
 require_once '../core/init.php';
 include '../template/admin/header.php';
 
+if (!Session::exists('email')) {
+    header('Location: index.php');
+}
+
 $errors     = array();
-$validation = new Validation();
-$validation = $validation->check(array(
+if (Input::get('submit')) {
+    $validation = new Validation();
+    $validation = $validation->check(array(
     'nama' => array(
                 'required' => true,
                 'min'      => 3,
@@ -19,17 +24,19 @@ $validation = $validation->check(array(
                     'min'      => 5,
                     'equal'    => 're-password',
                     )
-));
+    ));
 
-if ($validation->passed()) {
-    $data = array(
+
+    if ($validation->passed()) {
+        $data = array(
         'nama' => Input::get('nama'),
         'email' => Input::get('email'),
         'password' => password_hash(Input::get('password'), PASSWORD_DEFAULT)
     );
-    $user->registerAdmin($data);
-} else {
-    $errors = $validation->errors();
+        $user->registerAdmin($data);
+    } else {
+        $errors = $validation->errors();
+    }
 }
 ?>
 

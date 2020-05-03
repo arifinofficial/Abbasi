@@ -7,7 +7,7 @@ class Database
     private $HOST    = 'localhost';
     private $USER    = 'root';
     private $PASS    = '';
-    private $DB_NAME = 'db_abbasi';
+    private $DB_NAME = 'db_kutbi';
     
     public function __construct()
     {

@@ -1,5 +1,5 @@
 <footer class="adminFooter">
-    &copy; Abbasi - 2018
+    &copy; Kutbi - 2019
 </footer>
 
 </div>

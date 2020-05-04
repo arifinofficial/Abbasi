@@ -6,7 +6,7 @@ if (!Session::exists('email')) {
 
 $data = $user->deleteById('users', Input::get('id'));
 if ($data) {
-    header('Location: admin-table.php');
+    echo "<script>alert('Data Sukses di Hapus.'); window.location.href='admin-table.php'</script>";
 } else {
-    echo "Error!";
+    echo "<script>alert('Error.'); window.location.href='admin-table.php'</script>";
 }

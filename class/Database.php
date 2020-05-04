@@ -142,6 +142,8 @@ class Database
         }
 
         $statement->execute();
+
+        return true;
     }
 
     public function delete($table, $id)

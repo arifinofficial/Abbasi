@@ -13,7 +13,7 @@ $totalPembelian = count($pembelian);
 $pendingStatus = $dashboard->getStatusPending();
 $pendingStatus = count($pendingStatus);
 
-$totalProduk = $dashboard->getAllData('pembelian');
+$totalProduk = $dashboard->getAllData('produk');
 $totalProduk = count($totalProduk);
 
 $statictic = $dashboard->pembelianStatictic();

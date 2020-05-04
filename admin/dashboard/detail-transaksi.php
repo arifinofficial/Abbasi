@@ -13,6 +13,8 @@ if (isset($_POST['submit'])) {
     ];
 
     $transaction->updateStatus($data, $id);
+
+    echo '<script>alert("Status diubah."); window.location.href="transaksi.php"</script>';
 }
 
 $datas1 = $transaksi->getTransaksiJoinById('pembelian', 'customer', Input::get('id'), 'id_customer', 'id');
@@ -91,7 +93,7 @@ $active = 'transaksi';
                     <?php
                         if ($data1['bukti'] != 'null') {
                             ?>
-                    <img src="../../bukti_trf/<?=$data1['bukti']?>" class="mb-4" alt="">
+                    <img src="../../bukti_trf/<?=$data1['bukti']?>" class="mb-4 img-fluid" alt="">
                     <?php
                         }
                     ?>

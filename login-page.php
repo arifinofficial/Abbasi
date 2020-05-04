@@ -3,8 +3,8 @@ require_once 'core/init.php';
 if (!empty($_SESSION['customer'])) {
     header('Location: produk.php');
 }
-$title = 'Checkout | Abbasi Textile';
-$active = 'belanja';
+$title = 'Login | Abbasi Textile';
+$active = '';
 ?>
 
 <?php ob_start() ?>

@@ -42,7 +42,7 @@ if (isset($submit)) {
 
         $customer->registerCustomer($data);
 
-        echo "<script>alert('Terimakasih.'); window.location.href='index.php'</script>";
+        echo "<script>alert('Sukses, silahkan login.'); window.location.href='login-page.php'</script>";
     } else {
         print_r($validation->errors());
         die('error');

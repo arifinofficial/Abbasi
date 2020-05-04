@@ -3,10 +3,8 @@ require_once 'core/init.php';
 if (empty($_SESSION['cart'])) {
     header('Location: produk.php');
 }
-$title = 'Checkout | Abbasi Textile';
+$title = 'Konfirmasi Pembayaran | Abbasi Textile';
 $active = 'belanja';
-
-unset($_SESSION['cart']);
 
 if (Input::get('submit')) {
     $transaction = new Transaksi();
@@ -20,6 +18,13 @@ if (Input::get('submit')) {
     ];
     
     $transaction->updateProof($data, Input::get('order_id'));
+
+    if ($transaction) {
+        unset($_SESSION['cart']);
+        echo "<script>alert('Order sukses dibuat.'); window.location.href='product.php'</script>";
+    } else {
+        echo "<script>alert('Gagal! Periska form kembali.'); window.history.go(-1)'</script>";
+    }
 }
 
 ?>
@@ -28,7 +33,7 @@ if (Input::get('submit')) {
     <!-- Title Page -->
 	<section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url(assets/img/banner-03.jpg);">
 		<h2 class="l-text2 t-center">
-			Checkout
+			Konfirmasi Pembayaran
 		</h2>
 	</section>
 

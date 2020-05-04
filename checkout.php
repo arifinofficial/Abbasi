@@ -73,6 +73,7 @@ $provinces = $rajaOngkir->getProvince();
                             <div class="form-group">
                                 <label for="">Provinsi</label>
                                 <select style="border:1px solid #e6e6e6 !important" class="form-control province" name="provinsi">
+                                    <option value="0">Pilih Provinsi</option>
                                     <?php
                                         foreach ($provinces as $value) {
                                             ?>

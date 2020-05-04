@@ -29,7 +29,7 @@ if (Input::get('submit')) {
         Input::get('id')
     );
 
-    header('Location: pembelian-tabel.php');
+    echo "<script>alert('Data Sukses di Ubah.'); window.location.href='pembelian-tabel.php'</script>";
 }
 
 ?>

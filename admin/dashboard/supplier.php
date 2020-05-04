@@ -33,6 +33,8 @@ if (Input::get('submit')) {
         'harga' => Input::get('harga'),
         'total' => Input::get('total'),
     ]);
+
+    echo "<script>alert('Data Sukses ditambah.'); window.location.href='pembelian-tabel.php'</script>";
 }
 
 ?>

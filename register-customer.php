@@ -3,7 +3,7 @@ require_once 'core/init.php';
 if (!empty($_SESSION['customer'])) {
     header('Location: produk.php');
 }
-$title = 'Checkout | Abbasi Textile';
+$title = 'Register | Abbasi Textile';
 $active = 'belanja';
 ?>
 
@@ -11,7 +11,7 @@ $active = 'belanja';
     <!-- Title Page -->
 	<section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url(assets/img/banner-03.jpg);">
 		<h2 class="l-text2 t-center">
-			Login
+			Register
 		</h2>
 	</section>
 

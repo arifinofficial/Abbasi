@@ -8,7 +8,7 @@ $belanja = new Belanja();
 
 $data = $belanja->deleteById('belanja', Input::get('id'));
 if ($data) {
-    header('Location: pembelian-tabel.php');
+    echo "<script>alert('Data Sukses di Hapus.'); window.location.href='pembelian-tabel.php'</script>";
 } else {
-    echo "Error!";
+    echo "<script>alert('Error.'); window.location.href='pembelian-tabel.php'</script>";
 }

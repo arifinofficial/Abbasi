@@ -26,7 +26,7 @@ if (Input::get('submit')) {
             'email' => Input::get('email')
         );
         $user->updateData($data, Input::get('id'));
-        echo "<script>alert('Data berhasil diubah');</script>";
+        echo "<script>alert('Data berhasil diubah'); window.location.href='admin-table.php'</script>";
     } else {
         $errors = $validation->errors();
     }

@@ -8,7 +8,7 @@ $customer = new Customer();
 
 $data = $customer->deleteById('customer', Input::get('id'));
 if ($data) {
-    header('Location: customer-tabel.php');
+    echo "<script>alert('Data Sukses di Hapus.'); window.location.href='customer-tabel.php'</script>";
 } else {
-    echo "Error!";
+    echo "<script>alert('Error.'); window.location.href='customer-tabel.php'</script>";
 }

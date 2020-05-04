@@ -41,7 +41,7 @@ $active = 'transaksi';
                         <td><?= $data['total'] ?></td>
                         <td><?= $data['status'] ?></td>
                         <td class="text-center">
-                        <a href="detail-transaksi.php?id=<?= $data['0'] ?>"><i class="far fa-eye text-info"></i></a> | <i class="fas fa-trash-alt text-danger"></i>
+                        <a href="detail-transaksi.php?id=<?= $data['0'] ?>"><i class="far fa-eye text-info"></i></a> | <a href="delete-transaction.php?id=<?= $data['id'] ?>" onclick="javascript: return confirm('Apakah anda yakin menghapus data ini?')"><i class="fas fa-trash-alt text-danger"></i></a>
                         </td>
                     </tr>
                     <?php $i++ ?>    

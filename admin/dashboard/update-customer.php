@@ -33,19 +33,7 @@ if (Input::get('submit')) {
     }
 
     $customer->updateData($data, Input::get('id'));
-    header('Location: customer-tabel.php');
-
-
-    // if ($validation->passed()) {
-    //     $data = array(
-    //         'nama'  => Input::get('nama'),
-    //         'email' => Input::get('email')
-    //     );
-    //     $user->updateData($data, Input::get('id'));
-    //     echo "<script>alert('Data berhasil diubah');</script>";
-    // } else {
-    //     $errors = $validation->errors();
-    // }
+    echo "<script>alert('Data Sukses di Ubah.'); window.location.href='customer-tabel.php'</script>";
 }
 $active = 'customer';
 ?>
@@ -56,7 +44,7 @@ $active = 'customer';
     <div class="container">
         <div class="row">
         <div class="frameForm offset-md-4 col-md-4">
-            <h2 class="text-center uppercase">Edit Admin</h2>
+            <h2 class="text-center uppercase">Edit Customer</h2>
             <form action="" method="POST">
                 <div class="form-group">
                     <input type="hidden" name="id" value="<?= $datas['id'] ?>">

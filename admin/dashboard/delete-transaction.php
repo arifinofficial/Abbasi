@@ -8,7 +8,7 @@ $transaksi = new Transaksi();
 
 $data = $transaksi->deleteById('pembelian', Input::get('id'));
 if ($data) {
-    header('Location: pos-tabel.php');
+    echo "<script>alert('Data Sukses di Hapus.'); window.location.href='pos-tabel.php'</script>";
 } else {
-    echo "Error!";
+    echo "<script>alert('Error.'); window.location.href='pos-tabel.php'</script>";
 }

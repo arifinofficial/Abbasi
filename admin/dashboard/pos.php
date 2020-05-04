@@ -74,6 +74,7 @@ $active = 'pos';
                         </thead>
                         <tbody>
                         <?php
+                        if (isset($_SESSION['cart_admin'])) {
                             foreach (Session::get('cart_admin') as $id => $value) {
                                 $products = $produkClass->getProduk('id', $id)
                         ?>
@@ -85,16 +86,24 @@ $active = 'pos';
                         </tr>
                         <?php
                             }
+                        }
                         ?>
                         <tr class="table-active">
                             <th colspan="3" class="text-left">Total</th>
-                            <th><?= number_format(array_sum($hasil)) ?></th>
+                            <th><?= isset($hasil) ? number_format(array_sum($hasil)) : '' ?></th>
                         </tr>
+                        <?php
+                            if (isset($_SESSION['cart_admin'])) {
+                                ?>
+                        
                         <tr class="table-light">
                             <th colspan="4" class="text-right">
                                 <a href="checkout.php" class="btn btn-primary btn-sm">Checkout</a>
                             </th>
                         </tr>
+                        <?php
+                            }
+                        ?>
                         </tbody>
                     </table>
                 </div>

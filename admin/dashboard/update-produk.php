@@ -50,6 +50,8 @@ if (Input::get('submit')) {
     } else {
         $produk->updateProduk($dataNoFoto, Input::get('id'));
     }
+
+    echo "<script>alert('Data Sukses di Ubah.'); window.location.href='produk-table.php'</script>";
 }
 
 $active = 'produk';

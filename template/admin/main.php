@@ -32,7 +32,7 @@
                 <li <?php echo($active == 'masterdata' ? "class='active'" : "") ?>>
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-database"></i>
-                        Master Data
+                        Admin
                     </a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>

@@ -13,6 +13,8 @@ if (isset($_POST['submit'])) {
     ];
 
     $transaction->updateStatus($data, $id);
+
+    echo "<script>alert('Data Sukses di Ubah.'); window.location.href='pos-tabel.php'</script>";
 }
 
 $datas1 = $transaksi->getTransaction(Input::get('id'))[0];
@@ -31,20 +33,42 @@ $active = 'pos';
     <div id="content">
     <?php include '../../template/admin/nav-admin.php'; ?>
         <div class="container"> 
-            <p><strong>ID : <?= $datas1['id'] ?></strong></p>
-            <p><strong>Nama Kasir: <?= $datas1['admin'] ?></strong></p>
-            <p><strong>Tanggal Pembelian: <?= $datas1['tanggal'] ?><strong></p>
-            <p><strong>Total : <?= $datas1['total'] ?><strong></p>
-            <form action="" method="POST">
-            <p>Status: 
-                <input type="hidden" value="<?= $datas1['id'] ?>" name="id_pembelian">
-                <select name="status">
-                    <option value="lunas" <?= $datas1['status'] == 'lunas' ? 'selected' : '' ?> >Lunas</option>
-                    <option value="bon" <?= $datas1['status'] == 'bon' ? 'selected' : '' ?> >BON</option>
-                </select>
-            <input type="submit" value="Update" name="submit" class="btn btn-primary mb-1 btn-sm">
-            </p>
-            </form>
+            <div class="row">
+                <div class="col-md-6">
+                    <table class="table">
+                        <tr>
+                            <td>Order ID</td>
+                            <td>:</td>
+                            <td><?= $datas1['order_id'] ?></td>
+                        </tr>
+                        <tr>
+                            <td>Nama Kasir</td>
+                            <td>:</td>
+                            <td><?= $datas1['admin'] ?></td>
+                        </tr>
+                        <tr>
+                            <td>Tanggal Pembelian</td>
+                            <td>:</td>
+                            <td><?= $datas1['tanggal'] ?></td>
+                        </tr>
+                        <tr>
+                            <td>Total Pembelian</td>
+                            <td>:</td>
+                            <td><?= $datas1['total'] ?></td>
+                        </tr>
+                    </table>
+                    <form action="" method="POST">
+                    <p>Status: 
+                        <input type="hidden" value="<?= $datas1['id'] ?>" name="id_pembelian">
+                        <select name="status">
+                            <option value="lunas" <?= $datas1['status'] == 'lunas' ? 'selected' : '' ?> >Lunas</option>
+                            <option value="bon" <?= $datas1['status'] == 'bon' ? 'selected' : '' ?> >BON</option>
+                        </select>
+                    <input type="submit" value="Update" name="submit" class="btn btn-primary mb-1 btn-sm">
+                    </p>
+                    </form>
+                </div>
+            </div>
 
             <table class="table table-bordered table-striped data">
                 <thead class="thead-dark">

@@ -33,6 +33,7 @@ if (Input::get('submit')) {
             'password' => password_hash(Input::get('password'), PASSWORD_DEFAULT)
         );
             $user->registerAdmin($data);
+            echo "<script>alert('Register Sukses.'); window.location.href='admin-table.php'</script>";
         } else {
             $errors = $validation->errors();
         }

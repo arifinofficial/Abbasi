@@ -13,7 +13,7 @@ if (file_exists("../../produk_image/$foto")) {
 
 $data = $produk->deleteById('produk', Input::get('id'));
 if ($data) {
-    header('Location: produk-table.php');
+    echo "<script>alert('Data Sukses di Hapus.'); window.location.href='produk-table.php'</script>";
 } else {
-    echo "Error!";
+    echo "<script>alert('Error.'); window.location.href='produk-table.php'</script>";
 }
